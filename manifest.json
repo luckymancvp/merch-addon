@@ -1,0 +1,45 @@
+{
+   "background": {
+      "default_icon": {
+         "16": "icons/icon16.png",
+         "24": "icons/icon24.png",
+         "32": "icons/icon32.png"
+      },
+      "persistent": false,
+      "scripts": [ "js/jquery/jquery-3.2.1.min.js", "js/moment.min.js", "js/moment-timezone-with-data-2012-2022.min.js", "js/validate_license.min.js", "src/bg/background.min.js" ]
+   },
+   "browser_action": {
+      "default_icon": {
+         "16": "icons/icon16.png",
+         "24": "icons/icon24.png",
+         "32": "icons/icon32.png"
+      },
+      "default_title": "PrettyMerch"
+   },
+   "content_scripts": [ {
+      "css": [ "bootstrap/css/bootstrap.min.css", "css/pretty-styles.min.css", "css/pretty-fonts.min.css", "css/odometer-theme-minimal.min.css", "css/font-awesome.min.css" ],
+      "js": [ "js/jquery/jquery-3.2.1.min.js", "bootstrap/js/popper.min.js", "bootstrap/js/bootstrap.min.js", "js/moment.min.js", "js/moment-timezone-with-data-2012-2022.min.js", "js/validate_license.min.js", "js/odometer.min.js", "js/confetti.min.js", "src/content/content.min.js" ],
+      "matches": [ "https://merch.amazon.com/*" ],
+      "run_at": "document_start"
+   }, {
+      "js": [ "js/jquery/jquery-3.2.1.min.js", "js/moment.min.js", "js/moment-timezone-with-data-2012-2022.min.js", "js/validate_license.min.js", "src/content/content.min.js" ],
+      "matches": [ "https://www.amazon.com/ap/signin*" ],
+      "run_at": "document_start"
+   }, {
+      "js": [ "js/Chart.min.js" ],
+      "matches": [ "https://merch.amazon.com/*" ],
+      "run_at": "document_end"
+   } ],
+   "description": "",
+   "icons": {
+      "128": "icons/icon128.png",
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png"
+   },
+   "manifest_version": 2,
+   "name": "Management Tools for Amz Shirt",
+   "permissions": [ "notifications", "tabs", "storage", "alarms", "\u003Call_urls>" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "2.6",
+   "web_accessible_resources": [ "css/fonts/*.*", "img/*.*", "mp3/*.*" ]
+}
